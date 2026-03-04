@@ -17,3 +17,5 @@ MonoBehaviour:
   - Line: The signal came from sector [skip] seven. Our scouts haven't returned,
       and frankly... I'm not sure they ever will.
     CharacterInfo: {fileID: 11400000, guid: 5c997e2e5a0959546b5cd1b6b04fc4d9, type: 2}
+  - Line: 'Fearrrr the undead walkers. Our night has come, you wil die... '
+    CharacterInfo: {fileID: 11400000, guid: 35b38d4930ae2fc42a77dfa9351932b3, type: 2}

@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Zombie
   m_EditorClassIdentifier: filippos.dialogue-system::DialogueSystem.CharacterInfo
   CharacterName: Zombie
-  CharacterIcon: {fileID: 0}
+  CharacterIcon: {fileID: 21300000, guid: 6d5d626e1cd52704882f00a120c2174c, type: 3}

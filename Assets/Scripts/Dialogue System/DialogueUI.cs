@@ -1,6 +1,5 @@
+using System;
 using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -12,6 +11,9 @@ namespace DialogueSystem
         [SerializeField] private Button bt_Skip;
         [SerializeField] private Button bt_Continue;
         [SerializeField] private TMP_Text t_Dialogue;
+        [SerializeField] private TMP_Text t_CharacterName;
+        [SerializeField] private Image img_CharacterIcon;
+        [SerializeField] private CanvasGroup canvasGroup;
         [Tooltip("Time it takes to reveal each character")]
         [SerializeField] private float charRevealSpeed = 0.2f;
         [Tooltip("Delay in seconds applied after characters defined in punctuationChars.")]
@@ -21,41 +23,108 @@ namespace DialogueSystem
 
         private Coroutine dialogueCoroutine = null;
         private string currentLine = string.Empty;
-
+        private bool nextLine = false;
 
 
         void Awake()
         {
             bt_Continue.onClick.AddListener(() =>
             {
-                if (t_Dialogue.text != currentLine)
-                {
-                    StopCoroutine(dialogueCoroutine);
-                    t_Dialogue.text = currentLine;
-                }
-                else
-                {
-                    //continue to next line
-                }
+                ContinueDialogue();
             });
 
             bt_Skip.onClick.AddListener(() =>
             {
-                Debug.Log("End of dialogue");
+                SkipDialogue();
             });
 
             //clear
             t_Dialogue.text = "";
         }
-
         void Start()
         {
-            dialogueCoroutine = StartCoroutine(WriteDialogueRoutine("Reprehenderit laboris consequat anim esse dolore duis enim ex aliqua excepteur dolor do. Sint minim culpa consectetur sint elit ullamco ut dolore Lorem. Mollit Lorem adipisicing non incididunt nostrud eu amet officia officia qui incididunt et. Aliqua laboris tempor ea deserunt. Velit ea pariatur minim adipisicing minim et aliqua aliqua in dolor adipisicing. Ea quis nulla culpa sit ullamco id. Ut ipsum deserunt aute occaecat minim eu incididunt enim nulla eu labore commodo."));
+
         }
 
-        private IEnumerator WriteDialogueRoutine(string line)
+        public void ContinueDialogue()
         {
+            if (IsWriting())
+            {
+                StopCoroutine(dialogueCoroutine);
+                t_Dialogue.text = currentLine;
+            }
+            else
+            {
+                //continue to next line
+                nextLine = true;
+            }
+        }
+
+        public void SkipDialogue()
+        {
+            if (IsWriting())
+            {
+                StopCoroutine(dialogueCoroutine);
+                dialogueCoroutine = null;
+            }
+            StartCoroutine(SmoothHideRoutine());
+            Debug.Log("End of dialogue");
+        }
+
+        public void PlayDialogue(SO_DialogueModel dialogueModel, Action dialogueFinished = null)
+        {
+            StartCoroutine(PlayDialogueRoutine(dialogueModel));
+        }
+
+        private IEnumerator PlayDialogueRoutine(SO_DialogueModel dialogueModel)
+        {
+            for (int i = 0; i < dialogueModel.Conversation.Count; i++)
+            {
+                dialogueCoroutine = StartCoroutine(WriteDialogueRoutine(
+                    dialogueModel.Conversation[i].Line,
+                    dialogueModel.Conversation[i].CharacterInfo.CharacterName,
+                    dialogueModel.Conversation[i].CharacterInfo.CharacterIcon
+                ));
+
+                //last line
+                if (i == dialogueModel.Conversation.Count)
+                {
+                    Debug.Log("last line");
+                    yield return null;
+                }
+                else
+                {
+                    yield return new WaitUntil(() => !IsWriting() && nextLine);
+                    nextLine = false;
+                }
+            }
+
+            Debug.Log("Dialogue has finished");
+        }
+
+        private IEnumerator SmoothHideRoutine(float duration = 0.5f)
+        {
+            float timer = 0;
+            float currentAlpha = canvasGroup.alpha;
+            float targetAlpha = 0;
+            while (timer < duration)
+            {
+                timer += Time.deltaTime;
+
+                canvasGroup.alpha = Mathf.Lerp(currentAlpha, targetAlpha, timer / duration);
+                yield return null;
+            }
+
+            //make sure we get there
+            canvasGroup.alpha = targetAlpha;
+        }
+
+        private IEnumerator WriteDialogueRoutine(string line, string characterName, Sprite characterIcon)
+        {
+            img_CharacterIcon.sprite = characterIcon;
+            t_Dialogue.text = string.Empty;
             currentLine = line;
+            t_CharacterName.text = characterName;
             foreach (char c in line)
             {
                 t_Dialogue.text += c;
@@ -69,6 +138,11 @@ namespace DialogueSystem
                     yield return new WaitForSeconds(charRevealSpeed);
                 }
             }
+        }
+
+        public bool IsWriting()
+        {
+            return t_Dialogue.text != currentLine;
         }
     }
 }
