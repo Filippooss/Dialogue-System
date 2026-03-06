@@ -14,7 +14,7 @@ This dialogue system is designed to be easy to integrate into any Unity project 
 - **Typewriter Effect**: Smooth, character-by-character text reveal with adjustable speed and audio feedback
 - **Input Device Detection**: Automatically detects and switches between keyboard/mouse (with customizable icon sets) and various gamepads (Xbox, PlayStation)
 - **Inline Tokens**: Support for special tokens like `[interact]`, `[next]`, and `[skip]` that are replaced with context-aware glyphs based on the detected input method.
-  Easy to adde more!
+  Easy to add more!
 - **Glyph Mapping**: Data structure (`SO_TokenMap`) for seamlessly mapping raw tokens to sprite assets
 - **Character Information System**: Stores and displays character icons, names, and colors with smooth transitions
 
@@ -37,7 +37,7 @@ This dialogue system is designed to be easy to integrate into any Unity project 
 ## How to run the project
 
 - Clone the repository `git clone git@github.com:Filippooss/Dialogue-System.git`
-- Download the 6000.3.9.f1 version of unity throw the official Unity Hub
+- Download the 6000.3.9.f1 version of unity through the official Unity Hub
 - Open the project from Unity Hub
 - Open and run the ExtendedDemo or Demo scene
 
@@ -106,7 +106,7 @@ Maps inline tokens to sprite assets:
 
 ```csharp
 [interact]  → Display interact icon
-[next]      → Display next icon
+[continue]  → Display continue icon
 [skip]      → Display skip icon
 ```
 
@@ -145,7 +145,7 @@ Example dialogues:
 ### Setting Up a Dialogue
 
 1. Create a `SO_DialogueData` asset:
-   - Right-click in Project → Create → Scriptable Objects/Dialogue System/DialogueModel
+   - Right-click in Project → Create → Scriptable Objects/Dialogue System/DialogueData
 
 2. Create character assets (if needed):
    - Right-click in Project → Create → Scriptable Objects/CharacterInfo
@@ -239,7 +239,7 @@ The system is designed for extension:
 
 ## Limitations
 
-- System cannot detect combined punctuation characters like "...". Write now the system will detect them separately, which will result in 3 wait times
+- System cannot detect combined punctuation characters like "...". The system currently treats each period as an individual punctuation mark, which will result in 3 wait times.
 
 ## Dependencies
 
@@ -248,9 +248,9 @@ The system is designed for extension:
 
 ## Extra
 
-Emphasis was given to the Dialogue System, anything else like Player Controller is designed to support and demonstrate the key futures of the system, they are not represent in any way a final game product.
+Emphasis was given to the Dialogue System, anything else like Player Controller is designed to support and demonstrate the key features of the system, they are not represent in any way a final game product.
 
 ## Credits
 
-UI icons and 3D assets are from Kenney's store: https://kenney.nl/assets/category:Audio
+UI icons and 3D assets are from Kenney's store: https://kenney.nl/assets
 Halloween font from Google Fonts: https://fonts.google.com/
