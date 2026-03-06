@@ -15,7 +15,9 @@ MonoBehaviour:
   ActionIconsList:
   - Sprite: {fileID: 21300000, guid: e08072daf4a27f041b75b1c0c59dbdeb, type: 3}
     Type: 0
-    IconName: Tab
   - Sprite: {fileID: 21300000, guid: 1ed888ea61e888141bacb08e6ac120fd, type: 3}
     Type: 1
-    IconName: R2
+  - Sprite: {fileID: 1858064114, guid: 9a8c0b58bd5e29445b92a2b94ca51da2, type: 3}
+    Type: 2
+  - Sprite: {fileID: 1858064114, guid: 9a8c0b58bd5e29445b92a2b94ca51da2, type: 3}
+    Type: 3

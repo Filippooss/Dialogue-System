@@ -3,7 +3,7 @@ namespace DialogueSystem
     public enum E_InputMethod
     {
         MouseKeyboard,
-        Ps4,
+        PlayStation,
         Xbox,
         Gamepad
     }

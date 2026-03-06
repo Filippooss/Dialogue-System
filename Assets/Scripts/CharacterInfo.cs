@@ -7,5 +7,6 @@ namespace DialogueSystem
     {
         public string CharacterName;
         public Sprite CharacterIcon;
+        public Color CharacterColor;
     }
 }

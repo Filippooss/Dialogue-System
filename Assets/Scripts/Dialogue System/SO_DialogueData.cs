@@ -5,7 +5,7 @@ using UnityEngine;
 namespace DialogueSystem
 {
     [CreateAssetMenu(fileName = "DialogueModel", menuName = "Scriptable Objects/Dialogue System/DialogueModel")]
-    public class SO_DialogueModel : SO_Description
+    public class SO_DialogueData : SO_Description
     {
         public List<CharacterLine> Conversation;
     }

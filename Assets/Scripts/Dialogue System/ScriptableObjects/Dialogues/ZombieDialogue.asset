@@ -10,12 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b195a4e9a62f7ca41901229184c2c4fe, type: 3}
-  m_Name: FirstDialogue
+  m_Name: ZombieDialogue
   m_EditorClassIdentifier: Assembly-CSharp::DialogueModel
-  description: 
+  description: This scriptable object contains all the needed info for the dialogue
+    to play. The conversation list hold an object collection which contains the character
+    information that tells the line and the line string.
   Conversation:
   - Line: The signal came from sector [skip] seven. Our scouts haven't returned,
       and frankly... I'm not sure they ever will.
     CharacterInfo: {fileID: 11400000, guid: 5c997e2e5a0959546b5cd1b6b04fc4d9, type: 2}
-  - Line: 'Fearrrr the undead walkers. Our night has come, you wil die... '
+  - Line: 'Fearrrr the undead walkers. Our night has come, you wil die... [interact] '
     CharacterInfo: {fileID: 11400000, guid: 35b38d4930ae2fc42a77dfa9351932b3, type: 2}

@@ -16,7 +16,5 @@ namespace DialogueSystem
     {
         public Sprite Sprite;
         public E_InputMethod Type;
-        [Tooltip("Name for identifying the icon in TMP Sprite Asset")]
-        public string IconName;
     }
 }
