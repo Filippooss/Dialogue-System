@@ -47,13 +47,7 @@ namespace DialogueSystem
         private string currentLine = string.Empty;
         private bool nextLine = false;
         private bool isSkipped = false;
-        // private Dictionary<string, string> tokenMap = new Dictionary<string, string>()
-        // {
-        //     { "[interact]", "<sprite name=\"interact\">" },
-        //     { "[continue]", "<sprite name=\"continue\">" },
-        //     { "[skip]", "<sprite name=\"skip\">" }
-        // };
-
+        private bool isLastLine = false;
 
         void Awake()
         {
@@ -88,6 +82,11 @@ namespace DialogueSystem
                 StopCoroutine(writerCoroutine);
                 //instant show line
                 t_Dialogue.text = currentLine;
+            }
+            else if (!IsWriting() && isLastLine)
+            {
+                //TODO make when the last line is reached
+                //to skip waiting for the player to see the text {line:168}
             }
             else
             {

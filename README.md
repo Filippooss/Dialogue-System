@@ -34,6 +34,13 @@ This dialogue system is designed to be easy to integrate into any Unity project 
   - Interaction detection and prompts
   - Character collision and movement
 
+## How to run the project
+
+- Clone the repository `git clone git@github.com:Filippooss/Dialogue-System.git`
+- Download the 6000.3.9.f1 version of unity throw the official Unity Hub
+- Open the project from Unity Hub
+- Open and run the ExtendedDemo or Demo scene
+
 ## Project Structure
 
 ```
