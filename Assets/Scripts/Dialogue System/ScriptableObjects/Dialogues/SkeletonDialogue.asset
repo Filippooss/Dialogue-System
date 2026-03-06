@@ -16,10 +16,12 @@ MonoBehaviour:
     to play. The conversation list hold an object collection which contains the character
     information that tells the line and the line string.
   Conversation:
-  - Line: 'Skeleton Skeleton Skeleton Skeleton Skeleton Skeleton [interact] Skeleton
-      [skip]. '
-    CharacterInfo: {fileID: 11400000, guid: 5c997e2e5a0959546b5cd1b6b04fc4d9, type: 2}
-  - Line: 'Fearrrr the undead walkers. Our night has come, you wil die... [interact] '
+  - Line: "[interact] Careful where you step, Keeper! I\u2019ve just spent the morning
+      polishing my kneecaps with moonlight and old silk."
     CharacterInfo: {fileID: 11400000, guid: 2287ce382842e624180a2b51ba0a2e56, type: 2}
-  - Line: 'Fearrrr the undead walkers. Our night has come, you wil die... [interact] '
+  - Line: "[continue] They look lovely, Barnaby, but you\u2019ve got a stray dandelion
+      stuck in your ribs again. Hold still while I reach in. "
     CharacterInfo: {fileID: 11400000, guid: 5c997e2e5a0959546b5cd1b6b04fc4d9, type: 2}
+  - Line: '[skip] Oh! Keep it there. It tickles, and frankly, I haven''t felt a tickle
+      since the late 1700s.'
+    CharacterInfo: {fileID: 11400000, guid: 2287ce382842e624180a2b51ba0a2e56, type: 2}

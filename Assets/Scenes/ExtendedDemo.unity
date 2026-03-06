@@ -4839,12 +4839,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 305d3ee15d4ed2b46b8124e679398df6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: filippos.dialogue-system::DialogueSystem.DialogueManager
-  gameActionsList:
-  - {fileID: 11400000, guid: 16bc9cea8c30ec845805cfc8c7af9371, type: 2}
   dialogueUI: {fileID: 1534409799}
   inputReader: {fileID: 11400000, guid: aec835a4050dc0a468c050b2f9daf745, type: 2}
-  isDebug: 0
-  testDialogue: {fileID: 0}
 --- !u!4 &1060753037
 Transform:
   m_ObjectHideFlags: 0

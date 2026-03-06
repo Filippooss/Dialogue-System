@@ -16,8 +16,12 @@ MonoBehaviour:
     to play. The conversation list hold an object collection which contains the character
     information that tells the line and the line string.
   Conversation:
-  - Line: The signal came from sector [skip] seven. Our scouts haven't returned,
-      and frankly... I'm not sure they ever will.
+  - Line: '[interact] Kee...per... wait... my thumb fell into the potting soil again.
+      Can you help me fish it out?'
+    CharacterInfo: {fileID: 11400000, guid: 35b38d4930ae2fc42a77dfa9351932b3, type: 2}
+  - Line: "[continue] Found it! I\u2019ll just pop it back on and wrap it with some
+      fresh twine. You really need to stop over-watering yourself."
     CharacterInfo: {fileID: 11400000, guid: 5c997e2e5a0959546b5cd1b6b04fc4d9, type: 2}
-  - Line: 'Fearrrr the undead walkers. Our night has come, you wil die... [interact] '
+  - Line: "[skip] But the ferns... they like the damp... and I don\u2019t mind a
+      little extra moss in my pockets."
     CharacterInfo: {fileID: 11400000, guid: 35b38d4930ae2fc42a77dfa9351932b3, type: 2}

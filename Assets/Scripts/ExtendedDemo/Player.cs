@@ -78,7 +78,7 @@ namespace DialogueSystem
                 //TODO make the npc detect the player and display the prompt
                 //ShowPrompt inside Player looks wrong
                 targetNPC.ShowPrompt();
-                print("npc found");
+                //print("npc found");
             }
             else
             {
@@ -86,7 +86,7 @@ namespace DialogueSystem
                 {
                     targetNPC.HidePrompt();
                     targetNPC = null;
-                    print("npc lost");
+                    //print("npc lost");
                 }
             }
 
