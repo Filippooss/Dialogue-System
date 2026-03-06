@@ -381,7 +381,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 653c0aba5a47af14280a1f45d320b666, type: 3}
   m_Name: 
   m_EditorClassIdentifier: filippos.dialogue-system::DialogueSystem.DialogueTestUI
-  restartButton: {fileID: 298413258}
+  bt_Restart: {fileID: 298413258}
   dialogueUI: {fileID: 1534409799}
   testDialogue: {fileID: 11400000, guid: e93f66b947b292748b21880b00869557, type: 2}
   inputReader: {fileID: 11400000, guid: aec835a4050dc0a468c050b2f9daf745, type: 2}
